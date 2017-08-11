@@ -1,0 +1,24 @@
+<div class="sidebar" data-color="purple" data-image="img/sidebar-5.jpg">
+    <div class="sidebar-wrapper">
+        <div class="logo ">
+            <a href="javascript:void(0)" class="simple-text text-left">
+                Angular App
+            </a>
+        </div>
+
+        <ul class="nav">
+            <li ng-class="{active: $state.is('app.page1')}">
+                <a ui-sref="app.page1">
+                    <i class="pe-7s-graph"></i>
+                    <p>Page 1</p>
+                </a>
+            </li>
+            <li ng-class="{active: $state.is('app.page2')}">
+                <a ui-sref="app.page2">
+                    <i class="pe-7s-user"></i>
+                    <p>Page 2</p>
+                </a>
+            </li>            
+        </ul>
+    </div>
+</div>
