@@ -13,12 +13,21 @@ angular
   $stateProvider
   .state('app', {
     abstract: true,
-    templateUrl: 'views/common/layouts/master.html'
+    templateUrl: 'views/common/layouts/master.html',
+    param : { page : "Master"},
+    resolve: {
+      loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {        
+        return $ocLazyLoad.load({
+          files: ['js/controllers/controller.master.js']
+        });
+      }]
+    }
   })
   .state('app.page1', {
     url: '/page1',
+    param : {page : "Page 1"},
     templateUrl: 'views/page1.html',      
-    resolve: {      
+    resolve: {
       loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {        
         return $ocLazyLoad.load({
           files: ['js/controllers/page1.js']
@@ -29,6 +38,7 @@ angular
   .state('app.page2', {
     url: '/page2',
     templateUrl: 'views/page2.html',   
+    param : {page : "Page 2"},
     resolve: {      
       loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {        
         return $ocLazyLoad.load({
